@@ -56,7 +56,7 @@ def checkUser(user, password):
     bd = connectBD()
     cursor = bd.cursor()
 
-    query = "SELECT user, name, surname1, surname2, age, genre FROM users WHERE user = %s AND password = %s"
+    query = "SELECT user, name, surname1, surname2, age, genre, salary FROM users WHERE user = %s AND password = %s"
     cursor.execute(query, (user, password))  # Providing user and password as parameters
     userData = cursor.fetchall()
     bd.close()
